@@ -1,4 +1,5 @@
 import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import Rota from './Rota'
 import Veiculo from './Veiculo'
 
 export default class Carga extends BaseModel {
@@ -43,4 +44,7 @@ export default class Carga extends BaseModel {
 
   @belongsTo(() => Veiculo)
   public veiculo: BelongsTo<typeof Veiculo>
+
+  @belongsTo(() => Rota)
+  public rota: BelongsTo<typeof Rota>
 }
