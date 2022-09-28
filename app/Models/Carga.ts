@@ -1,10 +1,18 @@
+import { DateTime } from 'luxon'
 import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import Rota from './Rota'
 import Veiculo from './Veiculo'
+import Funcionario from './Funcionario'
 
 export default class Carga extends BaseModel {
   @column({ isPrimary: true })
   public id: number
+
+  @column.dateTime({ autoCreate: true })
+  public createdAt: DateTime
+
+  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  public updatedAt: DateTime
 
   @column()
   public previsao: string
@@ -47,4 +55,7 @@ export default class Carga extends BaseModel {
 
   @belongsTo(() => Rota)
   public rota: BelongsTo<typeof Rota>
+
+  @belongsTo(() => Funcionario)
+  public motorista: BelongsTo<typeof Funcionario>
 }
