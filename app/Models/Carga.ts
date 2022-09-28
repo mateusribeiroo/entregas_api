@@ -1,4 +1,5 @@
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import Veiculo from './Veiculo'
 
 export default class Carga extends BaseModel {
   @column({ isPrimary: true })
@@ -40,5 +41,6 @@ export default class Carga extends BaseModel {
   @column()
   public motorista_id: number
 
-  //TODO: relacionamento das FK
+  @belongsTo(() => Veiculo)
+  public veiculo: BelongsTo<typeof Veiculo>
 }
