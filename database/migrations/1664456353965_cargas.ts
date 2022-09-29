@@ -27,9 +27,9 @@ export default class extends BaseSchema {
       ]).notNullable()
       table.string('dimensoes').notNullable()
       table.string('volume').notNullable()
-      table.integer('veiculo_id').references('Veiculo').nullable()
-      table.integer('rota_id').references('Rota').nullable()
-      table.integer('motorista_id').references('Funcionario')
+      table.integer('veiculo_id').references('veiculos.id').nullable().unsigned()
+      table.integer('rota_id').references('rotas.id').nullable().unsigned()
+      table.integer('motorista_id').references('funcionarios.id').unsigned()
     })
   }
 
