@@ -12,6 +12,9 @@ export default class extends BaseSchema {
        */
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
+      table.integer('qtde_eixos').notNullable()
+      table.string('modelo').notNullable()
+      table.string('marca').notNullable()
     })
   }
 
