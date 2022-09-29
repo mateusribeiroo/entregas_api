@@ -19,7 +19,7 @@ export default class extends BaseSchema {
       table.string('obs').nullable()
       table.string('dest_nome').notNullable()
       table.enum('status_rastreio', [
-        'SEPARADO',
+        'SEPARADO_NO_ESTOQUE',
         'NA_TRANSPORTADORA',
         'INDO_PARA_CIDADE_DESTINO',
         'A_CAMINHO',
