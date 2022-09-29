@@ -27,8 +27,9 @@ export default class Funcionario extends BaseModel {
     @column()
     public jornada: number
 
+    // string para manter a precisao
     @column()
-    public remuneracao: number
+    public remuneracao: string
 
     @column()
     public tipo_cargo: number

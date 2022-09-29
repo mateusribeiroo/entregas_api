@@ -12,6 +12,13 @@ export default class extends BaseSchema {
        */
       table.timestamp('created_at', { useTz: true })
       table.timestamp('updated_at', { useTz: true })
+      table.string('num_INSS').notNullable()
+      table.date('data_nasc').notNullable()
+      table.date('data_admissao').notNullable()
+      table.integer('periodo').notNullable()
+      table.integer('jornada').notNullable()
+      table.string('remuneracao').notNullable()
+      table.integer('tipo_cargo').notNullable()
     })
   }
 
