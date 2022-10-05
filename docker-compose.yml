@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  mysql:
+    container_name: '${APP_NAME}-mysql'
+    image: mysql:latest
+    volumes:
+      - .db:/var/lib/mysql
+    ports:
+      - '3308:3306'
+    environment:
+      MYSQL_DATABASE: '${DB_DATABASE}'
+      MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+      TZ: 'UTC'
