@@ -3,8 +3,8 @@ import { BaseModel, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
 import Carga from './Carga'
 
 export default class Funcionario extends BaseModel {
-    @column({ isPrimary: true })
-    public id: number
+    @column()
+    public usuario_id: number
 
     @column.dateTime({ autoCreate: true })
     public createdAt: DateTime

@@ -56,6 +56,6 @@ export default class Carga extends BaseModel {
   @belongsTo(() => Rota)
   public rota: BelongsTo<typeof Rota>
 
-  @belongsTo(() => Funcionario)
+  @belongsTo(() => Funcionario, { localKey: 'usuario_id' })
   public motorista: BelongsTo<typeof Funcionario>
 }
